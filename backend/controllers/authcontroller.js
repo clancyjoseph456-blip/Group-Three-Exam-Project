@@ -35,6 +35,12 @@ exports.register = async (req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 };
+//login expiry time
+jwt.sign(
+    {id:result.insertId, role:'student'},
+    process.env.JWT_SECRET,
+    { expiresIn:'24h'}
+);
 
 // Login
 exports.login = async (req, res) => {
