@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 
 // Routes (make sure these files exist)
 try {
-  app.use('/api/auth', require('./routes/authRoutes'));
+  app.use('/api/auth', require('@routes/authRoutes'));
   app.use('/api/groups', require('./routes/groupRoutes'));
 } catch (err) {
   console.warn(' Some route files are missing:', err.message);
